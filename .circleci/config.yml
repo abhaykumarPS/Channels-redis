@@ -20,7 +20,7 @@ jobs:
            sudo apt-get install redis-sentinel --allow-downgrades
            sudo service redis-server start
            python -m pip install --upgrade pip wheel setuptools tox
-           ENV_PREFIX=$(tr -C -d "0-9" <<< "3.8")
+           ENV_PREFIX=$(tr -C -d "0-9" '\\<<' "3.8")
            TOXENV=$(tox --listenvs | grep "^py$ENV_PREFIX" | tr '\n' ',') python -m tox
            sudo service redis-server start
            pip3 install tox 
