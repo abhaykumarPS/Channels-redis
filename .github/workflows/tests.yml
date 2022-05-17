@@ -79,7 +79,6 @@ jobs:
                 python3.8 -m pip install backports.zoneinfo && \
                 python3.8 -m pip install --upgrade pip wheel setuptools tox && \
                 apt-get install redis-sentinel -y && \
-                python3.8 setup.py install && \
                 apt install redis-server -y && \
                 service redis-server start && \
                 service redis-server status && \
